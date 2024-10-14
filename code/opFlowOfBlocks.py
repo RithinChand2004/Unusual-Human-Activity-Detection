@@ -10,8 +10,8 @@ def calcOptFlowOfBlocks(mag,angle,grayImg):
     noOfRowInBlock = 20
     noOfColInBlock = 20
     ''' calculate the number of rows of blocks and columns of blocks in the frame '''
-    xBlockSize = rows / noOfRowInBlock
-    yBlockSize = cols / noOfColInBlock
+    xBlockSize = int(rows / noOfRowInBlock)
+    yBlockSize = int(cols / noOfColInBlock)
     '''To calculate the optical flow of each block'''
 
     '''declare an array initialized to 0 of the size of the number of blocks'''
@@ -19,8 +19,8 @@ def calcOptFlowOfBlocks(mag,angle,grayImg):
     opFlowOfBlocks = np.zeros((xBlockSize,yBlockSize,2))
     
     for index,value in np.ndenumerate(mag):
-        opFlowOfBlocks[index[0]/noOfRowInBlock][index[1]/noOfColInBlock][0] += mag[index[0]][index[1]]
-        opFlowOfBlocks[index[0]/noOfRowInBlock][index[1]/noOfColInBlock][1] += angle[index[0]][index[1]]
+        opFlowOfBlocks[int(index[0]/noOfRowInBlock)][int(index[1]/noOfColInBlock)][0] += mag[index[0]][index[1]]
+        opFlowOfBlocks[int(index[0]/noOfRowInBlock)][int(index[1]/noOfColInBlock)][1] += angle[index[0]][index[1]]
 
     centreOfBlocks = np.zeros((xBlockSize,yBlockSize,2))
     for index,value in np.ndenumerate(opFlowOfBlocks):

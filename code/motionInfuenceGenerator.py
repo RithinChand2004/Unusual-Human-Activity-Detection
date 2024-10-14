@@ -19,7 +19,9 @@ def getCentreOfBlock(blck1Indx,blck2Indx,centreOfBlocks):
     return (x1,y1),(x2,y2),slope
 
 
-def calcEuclideanDist((x1,y1),(x2,y2)):
+def calcEuclideanDist(point1, point2):
+    x1, y1 = point1
+    x2, y2 = point2
     dist = float(((x2-x1)**2 + (y2-y1)**2)**0.5)
     return dist
     

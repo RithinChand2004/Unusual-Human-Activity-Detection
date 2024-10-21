@@ -136,7 +136,7 @@ if __name__ == '__main__':
     '''
         defines training set and calls trainFromVideo for every vid
     '''
-    testSet = [r"Dataset\videos\scene2\2_test1.avi"]
+    testSet = [r"Dataset\videos\scene1\test2.avi"]
     for video in testSet:
         test_video(video)
     print ("Done")
